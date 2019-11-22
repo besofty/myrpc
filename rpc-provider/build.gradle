@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'com.besofty'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':rpc-interface')
+    compile project(':rpc-netty')
+    
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

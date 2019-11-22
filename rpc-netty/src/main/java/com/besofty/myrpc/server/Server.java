@@ -1,5 +1,7 @@
 package com.besofty.myrpc.server;
 
+import com.besofty.myrpc.HelloService;
+import com.besofty.myrpc.impl.HelloServiceImpl;
 import com.besofty.myrpc.proxy.MyNettyImpl;
 import com.besofty.myrpc.server.codec.MessageFrameDecoder;
 import com.besofty.myrpc.server.codec.MessageFrameEncoder;
@@ -33,12 +35,8 @@ public class Server {
     }
 
     private static void initMessageServerProcessHandler() {
-        //TODO
-        //入参 要扫描的包名
-        Reflections f = new Reflections("com.besofty.myrpc.impl");
-        //入参 目标注解类
-        Set<Class<?>> set = f.getTypesAnnotatedWith(MyNettyImpl.class);
         messageServerProcessHandler = new MessageServerProcessHandler();
+        messageServerProcessHandler.addServiceProvider(HelloService.class.getCanonicalName(), new HelloServiceImpl());
     }
 
     private static void initChildHandler() {

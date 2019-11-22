@@ -13,7 +13,6 @@ repositories {
 
 dependencies {
     compile project(':rpc-interface')
-    compile project(':rpc-netty')
     
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

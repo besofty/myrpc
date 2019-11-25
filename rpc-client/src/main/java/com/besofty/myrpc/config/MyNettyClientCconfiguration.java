@@ -1,6 +1,6 @@
 package com.besofty.myrpc.config;
 
-import com.besofty.myrpc.proxy.MyNettyBeanPostProcessor;
+import com.besofty.myrpc.proxy.MyNettyProxyProcessor;
 import com.besofty.myrpc.client.MyNettyClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +13,7 @@ public class MyNettyClientCconfiguration {
     }
 
     @Bean
-    public MyNettyBeanPostProcessor myNettyBeanPostProcessor() {
-        return new MyNettyBeanPostProcessor();
+    public MyNettyProxyProcessor myNettyBeanPostProcessor() {
+        return new MyNettyProxyProcessor();
     }
 }

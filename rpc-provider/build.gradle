@@ -12,7 +12,10 @@ repositories {
 }
 
 dependencies {
+    compile project(':rpc-netty')
     compile project(':rpc-interface')
-    
+
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.2.1.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter:2.2.1.RELEASE'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

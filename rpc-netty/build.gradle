@@ -12,9 +12,6 @@ repositories {
 }
 
 dependencies {
-    compile project(':rpc-interface')
-    compile project(':rpc-provider')
-    
     testCompile group: 'junit', name: 'junit', version: '4.12'
     implementation 'org.springframework.boot:spring-boot-starter:2.2.1.RELEASE'
     compile 'io.netty:netty-all:4.1.39.Final'
@@ -23,7 +20,4 @@ dependencies {
     compile 'org.reflections:reflections:0.9.11'
     compile 'com.google.guava:guava:21.0'
     compile 'org.apache.commons:commons-lang3:3.3.2'
-    
-
-            
 }

@@ -11,7 +11,7 @@ import org.springframework.util.ReflectionUtils;
 import javax.annotation.Resource;
 
 
-public class MyNettyBeanPostProcessor extends InstantiationAwareBeanPostProcessorAdapter {
+public class MyNettyProxyProcessor extends InstantiationAwareBeanPostProcessorAdapter {
     @Resource
     private MyNettyClient myNettyClient;
 

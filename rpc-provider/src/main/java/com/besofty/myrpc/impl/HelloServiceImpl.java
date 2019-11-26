@@ -7,4 +7,10 @@ public class HelloServiceImpl implements HelloService {
     public String sayHello(String name) {
         return name + " hello!";
     }
+
+    @Override
+    public String doFirst(String step) {
+        return step + " do success";
+    }
+
 }

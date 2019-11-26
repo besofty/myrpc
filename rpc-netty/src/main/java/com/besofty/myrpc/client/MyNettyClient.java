@@ -24,13 +24,20 @@ import java.util.Collections;
 import java.util.concurrent.ExecutionException;
 
 public class MyNettyClient {
+    private String host;
+    private Integer port;
     private static final MyNettyRequestCenter requestCenter = new MyNettyRequestCenter();
     private static final Bootstrap bootstrap = new Bootstrap();
     private ChannelFuture channelFuture;
 
+    public MyNettyClient(String host, Integer port) {
+        this.host = host;
+        this.port = port;
+    }
+
     public void start() throws InterruptedException {
         initBootstrap();
-        channelFuture = bootstrap.connect("127.0.0.1", 8090);
+        channelFuture = bootstrap.connect(host, port);
         channelFuture.sync();
     }
 

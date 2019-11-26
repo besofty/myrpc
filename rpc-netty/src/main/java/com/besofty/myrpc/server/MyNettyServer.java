@@ -20,9 +20,16 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class MyNettyServer {
+    private Integer port;
+    private String packageName;
     private ServerBootstrap serverBootstrap;
     private ChannelFuture channelFuture;
     private MessageServerProcessHandler messageServerProcessHandler;
+
+    public MyNettyServer(Integer port, String packageName) {
+        this.port = port;
+        this.packageName = packageName;
+    }
 
     private void init() {
         serverBootstrap = new ServerBootstrap();
@@ -33,10 +40,11 @@ public class MyNettyServer {
 
     private void initMessageServerProcessHandler() {
         messageServerProcessHandler = new MessageServerProcessHandler();
-        List<Class<?>> classes = PackageUtil.getClasses("com.besofty.myrpc.impl");
+        List<Class<?>> classes = PackageUtil.getClasses(packageName);
         for (Class clas : classes) {
             try {
                 addMessageServerProcess(clas.getInterfaces()[0].getCanonicalName(), clas.newInstance());
+                //TODO 更新到注册中心
             } catch (InstantiationException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {
@@ -70,7 +78,7 @@ public class MyNettyServer {
         init();
         initMessageServerProcessHandler();
         initChildHandler();
-        channelFuture = serverBootstrap.bind(8090).sync();
+        channelFuture = serverBootstrap.bind(port).sync();
     }
 
     public void stop() throws ExecutionException, InterruptedException {

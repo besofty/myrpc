@@ -15,6 +15,6 @@ public class TestNettyController {
 
     @GetMapping("/test_proxy")
     public String testProxy(@RequestParam String name) {
-        return helloService.sayHello(name);
+        return helloService.sayHello(name) + "  " + helloService.doFirst("say hello ");
     }
 }

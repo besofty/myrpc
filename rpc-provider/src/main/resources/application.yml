@@ -1,2 +1,6 @@
 server:
   port: 8083
+
+myNetty:
+  port: 8090
+  packageName: com.besofty.myrpc.impl

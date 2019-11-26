@@ -1,0 +1,9 @@
+
+«%squid:RedundantThrowsDeclarationCheck"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(ÊúÙ8Ò°Ú“é-
+Zsquid:UselessImportCheck"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8’Š”é-
+csquid:UselessImportCheck"8Remove this unused import 'org.reflections.Reflections'.(ä¿ÏÖ8’Š”é-
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ç¤‰–é-
+«%squid:RedundantThrowsDeclarationCheck""sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(·ã8¬éÚ“é-
+bsquid:S2147"DCombine this catch with the one at line 25, which has the same body.(Å¡ß8ç¤‰–é-
+Ÿsquid:S1186""€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·ã8¬éÚ“é-
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ç¤‰–é-

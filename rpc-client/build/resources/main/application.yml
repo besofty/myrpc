@@ -1,0 +1,6 @@
+server:
+  port: 8082
+
+myNetty:
+  port: 8090
+  host: 127.0.0.1
